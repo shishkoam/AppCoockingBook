@@ -138,6 +138,14 @@ attr behavior_overlapTop
 attr behavior_peekHeight
 attr behavior_saveFlags
 attr behavior_skipCollapsed
+attr behind_swiped_item_bg_color
+attr behind_swiped_item_bg_color_secondary
+attr behind_swiped_item_custom_layout
+attr behind_swiped_item_custom_layout_secondary
+attr behind_swiped_item_icon
+attr behind_swiped_item_icon_centered
+attr behind_swiped_item_icon_margin
+attr behind_swiped_item_icon_secondary
 attr borderWidth
 attr borderlessButtonStyle
 attr bottomAppBarStyle
@@ -470,6 +478,7 @@ attr itemTextAppearance
 attr itemTextAppearanceActive
 attr itemTextAppearanceInactive
 attr itemTextColor
+attr item_layout
 attr keyPositionType
 attr keylines
 attr labelStyle
@@ -562,6 +571,7 @@ attr listPreferredItemPaddingRight
 attr listPreferredItemPaddingStart
 attr logo
 attr logoDescription
+attr long_press_to_start_dragging
 attr materialAlertDialogBodyTextStyle
 attr materialAlertDialogTheme
 attr materialAlertDialogTitleIconStyle
@@ -745,6 +755,8 @@ attr suffixText
 attr suffixTextAppearance
 attr suffixTextColor
 attr suggestionRowLayout
+attr swipeRefreshLayoutProgressSpinnerBackgroundColor
+attr swiped_item_opacity_fades_on_swiping
 attr switchMinWidth
 attr switchPadding
 attr switchStyle
@@ -919,11 +931,13 @@ color accent_material_dark
 color accent_material_light
 color androidx_core_ripple_material_light
 color androidx_core_secondary_text_default_material_light
+color background
 color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
 color black_effective
+color bottomBarBackground
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -986,12 +1000,14 @@ color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
 color dim_foreground_material_light
+color divider
 color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color listItemBackground
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1088,6 +1104,9 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color swipeBehindBackground
+color swipeBehindBackgroundSecondary
+color swipeBehindTextColor
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -1432,6 +1451,16 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen spacing_extra_large
+dimen spacing_extra_large_x2
+dimen spacing_huge
+dimen spacing_large
+dimen spacing_large_x2
+dimen spacing_micro
+dimen spacing_normal
+dimen spacing_small
+dimen spacing_smaller
+dimen spacing_smaller_x2
 dimen subtitle_corner_radius
 dimen subtitle_outline_width
 dimen subtitle_shadow_offset
@@ -1548,19 +1577,31 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable divider_grid_list
+drawable divider_horizontal_list
+drawable divider_vertical_list
+drawable ic_archive_item
 drawable ic_calendar_black_24dp
 drawable ic_clear_black_24dp
+drawable ic_clear_items
+drawable ic_drag
 drawable ic_edit_black_24dp
+drawable ic_ice_cream
 drawable ic_keyboard_arrow_left_black_24dp
 drawable ic_keyboard_arrow_right_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_list_grid
+drawable ic_list_horizontal
+drawable ic_list_vertical
 drawable ic_menu_arrow_down_black_24dp
 drawable ic_menu_arrow_up_black_24dp
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_new_item
+drawable ic_remove_item
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -1684,6 +1725,8 @@ id center_horizontal
 id center_vertical
 id chain
 id chains
+id change_dragging_restrictions
+id change_item_layout
 id checkbox
 id checked
 id chip
@@ -1729,11 +1772,14 @@ id dragLeft
 id dragRight
 id dragStart
 id dragUp
+id drag_icon
 id dropdown_menu
 id easeIn
 id easeInOut
 id easeOut
 id edit_query
+id enable_disable_drawing_behind
+id enable_disable_fade_on_swiping
 id end
 id end_padder
 id enterAlways
@@ -1764,6 +1810,11 @@ id hideable
 id home
 id homeAsUp
 id honorRequest
+id ice_cream_icon
+id ice_cream_name
+id ice_cream_photo
+id ice_cream_photo_filter
+id ice_cream_price
 id icon
 id icon_group
 id ifRoom
@@ -1787,6 +1838,7 @@ id linear
 id list
 id listMode
 id list_item
+id loading_indicator
 id main
 id masked
 id media_actions
@@ -1821,7 +1873,10 @@ id mtrl_picker_text_input_range_end
 id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id multiply
+id navigation_grid_list
 id navigation_header_container
+id navigation_horizontal_list
+id navigation_vertical_list
 id never
 id noScroll
 id none
@@ -1910,6 +1965,7 @@ id stop
 id stretch
 id submenuarrow
 id submit_area
+id swipeRefreshLayout
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -2023,6 +2079,12 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout behind_swiped_grid_list
+layout behind_swiped_grid_list_secondary
+layout behind_swiped_horizontal_list
+layout behind_swiped_horizontal_list_secondary
+layout behind_swiped_vertical_list
+layout behind_swiped_vertical_list_secondary
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2041,6 +2103,9 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_recycler_vew
 layout fragment_recycler_vew_list
+layout fragment_vertical_list
+layout list_item_vertical_list
+layout list_item_vertical_list_cardview
 layout main_activity
 layout main_fragment
 layout mtrl_alert_dialog
@@ -2102,6 +2167,8 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+menu bottom_navigation
+menu fragment_vertical_list_options
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
@@ -2132,6 +2199,14 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string action_draw_behind_swiped_items
+string action_not_draw_behind_swiped_items
+string action_not_reduce_alpha_on_swiping
+string action_not_restrict_dragging
+string action_reduce_alpha_on_swiping
+string action_restrict_dragging
+string action_use_card_view_item_layout
+string action_use_default_item_layout
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
@@ -2140,12 +2215,18 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
+string empty_log
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string generic_archive
+string generic_delete
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
+string itemArchivedMessage
+string itemRemovedMessage
+string library_name
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
 string mtrl_exceed_max_badge_number_suffix
@@ -2185,8 +2266,14 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string priceFormat
 string search_menu_title
+string seeLogMessagesTitle
 string status_bar_notification_info_overflow
+string title_grid_list
+string title_horizontal_list
+string title_vertical_list
+string undoCaps
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow
@@ -2913,6 +3000,7 @@ styleable ConstraintSet android_orientation android_id android_visibility androi
 styleable CoordinatorLayout keylines statusBarBackground
 styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_anchorGravity layout_behavior layout_dodgeInsetEdges layout_insetEdge layout_keyline
 styleable CustomAttribute attributeName customBoolean customColorDrawableValue customColorValue customDimension customFloatValue customIntegerValue customPixelDimension customStringValue
+styleable DragDropSwipeRecyclerView behind_swiped_item_bg_color behind_swiped_item_bg_color_secondary behind_swiped_item_custom_layout behind_swiped_item_custom_layout_secondary behind_swiped_item_icon behind_swiped_item_icon_centered behind_swiped_item_icon_margin behind_swiped_item_icon_secondary divider item_layout long_press_to_start_dragging swiped_item_opacity_fades_on_swiping
 styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color drawableSize gapBetweenBars spinBars thickness
 styleable ExtendedFloatingActionButton elevation extendMotionSpec hideMotionSpec showMotionSpec shrinkMotionSpec
 styleable ExtendedFloatingActionButton_Behavior_Layout behavior_autoHide behavior_autoShrink
@@ -2982,6 +3070,7 @@ styleable State android_id constraints
 styleable StateListDrawable android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable StateListDrawableItem android_drawable
 styleable StateSet defaultState
+styleable SwipeRefreshLayout swipeRefreshLayoutProgressSpinnerBackgroundColor
 styleable SwitchCompat android_textOn android_textOff android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode
 styleable SwitchMaterial useMaterialThemeColors
 styleable TabItem android_icon android_layout android_text

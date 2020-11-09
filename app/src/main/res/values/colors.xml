@@ -9,4 +9,12 @@
     <color name="colorIcons">#FFFFFF</color>
     <color name="colorDivider">#BDBDBD</color>
     <color name="black_effective">#2a2a2a</color>
+
+    <color name="bottomBarBackground">#ebebeb</color>
+    <color name="background">#fafafa</color>
+    <color name="listItemBackground">#ffffff</color>
+    <color name="divider">#e1e1e1</color>
+    <color name="swipeBehindBackground">#d0184c</color>
+    <color name="swipeBehindBackgroundSecondary">#17af98</color>
+    <color name="swipeBehindTextColor">#ffffff</color>
 </resources>

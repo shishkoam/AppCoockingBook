@@ -1,16 +1,18 @@
 package ua.shishkoam.appcoockingbook.ui.features
 
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.*
 import androidx.recyclerview.widget.RecyclerView.ItemAnimator
-import androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import jp.wasabeef.recyclerview.animators.LandingAnimator
 import ua.shishkoam.appcoockingbook.R
 import ua.shishkoam.appcoockingbook.ui.features.dummy.DummyContent
+import ua.shishkoam.appcoockingbook.ui.features.snap.FixedSnapHelper
 
 
 /**
@@ -20,13 +22,14 @@ class RecyclerViewFragment : Fragment() {
 
     private var itemList = mutableListOf<DummyContent.DummyItem>()
 //    private var itemClickListener: AdapterView.OnItemClickListener<>? = null
-    private var diffUtil: RecyclerDiffUtil? = null
 
 //    constructor()
 
 //    constructor(listener: AdapterView.OnItemClickListener<>) {
 //        itemClickListener = listener
 //    }
+
+    val handler = Handler()
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
@@ -46,7 +49,7 @@ class RecyclerViewFragment : Fragment() {
         } else {
             GridLayoutManager(requireContext(), 3)
         }
-        val defaultItemAnimator: ItemAnimator = DefaultItemAnimator()
+        val defaultItemAnimator: ItemAnimator = LandingAnimator()
 
 
 //        RecyclerView.ItemDecoration
@@ -54,6 +57,8 @@ class RecyclerViewFragment : Fragment() {
         viewAdapter = RecyclerViewAdapter(DummyContent.ITEMS)
 
         recyclerView = view.findViewById(R.id.list) as RecyclerView
+
+        val swipeRefreshLayout = view.findViewById(R.id.swipeRefreshLayout) as SwipeRefreshLayout
         recyclerView.apply {
             // use this setting to improve performance if you know that changes
             // in content do not change the layout size of the RecyclerView
@@ -66,28 +71,19 @@ class RecyclerViewFragment : Fragment() {
             adapter = viewAdapter
             itemAnimator = defaultItemAnimator
 
-        }
-        diffUtil = RecyclerDiffUtil(DummyContent.ITEMS, DummyContent.ITEMS_UPDATE, object :
-            ItemDiff<DummyContent.DummyItem> {
-                override fun isSame(
-                    oldItems: List<DummyContent.DummyItem>,
-                    newItems: List<DummyContent.DummyItem>,
-                    oldItemPosition: Int,
-                    newItemPosition: Int
-                ): Boolean {
-                    return true
-                }
+            /*ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new SwipeDismissTouchCallback(ItemTouchHelper.RIGHT) {
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                DemoItem demoItem = (DemoItem) viewHolder.itemView.getTag(R.id.demo_item_key);
+                demoAdapter.removeItem(demoItem);
+            }
+        });
+        itemTouchHelper.attachToRecyclerView(recyclerView);*/
 
-                override fun isSameContent(
-                    oldItems: List<DummyContent.DummyItem>,
-                    newItems: List<DummyContent.DummyItem>,
-                    oldItemPosition: Int,
-                    newItemPosition: Int
-                ): Boolean {
-                    return false
-                }
-            })
-        val diffResult = DiffUtil.calculateDiff(diffUtil!!)
+
+        }
+        val snapHelper: SnapHelper = FixedSnapHelper()
+        snapHelper.attachToRecyclerView(recyclerView)
 
         val itemTouchCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
             override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, viewHolder1: RecyclerView.ViewHolder): Boolean {
@@ -101,6 +97,20 @@ class RecyclerViewFragment : Fragment() {
             }
         }
 
+        swipeRefreshLayout.setOnRefreshListener {
+            // Initialize a new Runnable
+            val runnable = Runnable {
+                // Update the text view text with a random number
+                (viewAdapter as RecyclerViewAdapter).update(DummyContent.ITEMS_UPDATE)
+                // Hide swipe to refresh icon animation
+                swipeRefreshLayout.isRefreshing = false
+            }
+
+            // Execute the task after specified time
+            handler.postDelayed(
+                runnable, 3000.toLong()
+            )
+        }
         val itemTouchHelper = ItemTouchHelper(itemTouchCallback)
         itemTouchHelper.attachToRecyclerView(recyclerView)
     }
