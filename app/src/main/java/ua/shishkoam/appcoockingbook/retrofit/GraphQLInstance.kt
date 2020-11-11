@@ -6,6 +6,9 @@ import com.google.gson.GsonBuilder
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import org.json.JSONObject
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -43,6 +46,30 @@ object GraphQLInstance {
                 e.printStackTrace()
             }
         }
+    }
+
+    private fun callMe() {
+        val mutation = "mutation {createPing(symbol:\"mutation\", timeInMillis:500, status:0) {id}}"
+        val query = "query {ping(id:1){id,name,status}}"
+        val accountCall: Call<Data?>? = graphQLService.queryWithCall(query)
+        accountCall?.enqueue(object : Callback<Data?> {
+            override fun onResponse(
+                call: Call<Data?>?,
+                response: Response<Data?>
+            ) {
+                if (response.isSuccessful()) {
+                    response.body().toString();
+                } else {
+                    Log.i("AAAAAAAA", "B")
+                }
+            }
+
+            override fun onFailure(call: Call<Data?>?, t: Throwable) {
+                t.printStackTrace()
+                Log.i("AAAAAAAA", "C  " + t.message)
+            }
+        })
+        Log.i("AAAAAAAA", accountCall?.request()?.url?.toString() + "")
     }
 
 }
