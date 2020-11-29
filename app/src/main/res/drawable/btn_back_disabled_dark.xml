@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:top="2dp"
+        android:bottom="2dp"
+        android:left="2dp"
+        android:right="2dp">
+        <shape>
+            <stroke
+                android:width="0.5dp"
+                android:color="@color/btn_back_separator_light" />
+
+            <corners android:radius="2dp" />
+
+            <gradient
+                android:angle="270"
+                android:startColor="@color/btn_back_disabled_dark"
+                android:centerColor="@color/btn_back_disabled_dark"
+                android:endColor="@color/btn_back_disabled_dark"/>
+        </shape>
+    </item>
+
+</layer-list>

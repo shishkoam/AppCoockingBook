@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:tag="timer_tag"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:paddingRight="20dp"
+        android:paddingEnd="20dp"
+        android:background="@drawable/rectangle_text_view"
+        android:gravity="center"
+        android:text="00:00:0"
+        android:textColor="#000000"
+        android:textSize="@dimen/op_form_text_size_navigator_result"
+        tools:ignore="RtlSymmetry" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/timeTextView"
+        android:layout_alignLeft="@+id/timeTextView"
+        android:layout_alignRight="@+id/timeTextView"
+        android:layout_alignStart="@+id/timeTextView"
+        android:layout_below="@+id/timeTextView">
+
+        <ImageButton
+            android:id="@+id/startButton"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/height_small"
+            android:layout_weight="1"
+            android:background="@drawable/rectangle_left_button"
+            android:scaleType="fitCenter"
+            android:src="@drawable/start"
+            />
+
+        <ImageButton
+            android:id="@+id/resetButton"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/height_small"
+            android:layout_weight="1"
+            android:background="@drawable/rectangle_right_button"
+            android:scaleType="fitCenter"
+            android:src="@drawable/stop" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/closeButton"
+        android:layout_width="@dimen/height_small"
+        android:layout_height="@dimen/height_small"
+        android:layout_alignEnd="@+id/timeTextView"
+        android:layout_alignRight="@+id/timeTextView"
+        android:layout_alignTop="@+id/timeTextView"
+        android:background="@drawable/rounded"
+        android:scaleType="fitCenter"
+        android:src="@drawable/close" />
+</RelativeLayout>

@@ -19,4 +19,108 @@
     <string name="action_not_restrict_dragging">Don\'t restrict dragging</string>
     <string name="generic_delete">Delete</string>
     <string name="generic_archive">Archive</string>
+
+    <string name="log_token">Log Token</string>
+    <string name="button_ok">OK</string>
+
+    <string name="msg_subscribed">Subscribed to weather topic</string>
+    <string name="msg_token_fmt" translatable="false">FCM registration Token: %s</string>
+
+    <string name="color">Color</string>
+    <string name="color_black">Black</string>
+    <string name="color_blue">Blue</string>
+    <string name="color_brown">Brown</string>
+    <string name="color_green">Green</string>
+    <string name="color_grey">Grey</string>
+    <string name="color_light_blue">Light blue</string>
+    <string name="color_orange">Orange</string>
+    <string name="color_red">Red</string>
+    <string name="color_white">White</string>
+    <string name="color_yellow">Yellow</string>
+
+    <string name="gigabyte">Gb</string>
+    <string name="megabyte">Mb</string>
+    <string name="kilobyte">Kb</string>
+    <string name="unit_byte">b</string>
+
+    <string name="information">Information</string>
+    <string name="startup_strings">Launching...</string>
+
+    <string name="exit_request">Do you really want to quit application?</string>
+    <string name="group_header">Header</string>
+
+    <string name="title_error">Error</string>
+    <string name="btnContinue">Continue</string>
+    <string name="openFileDialogAccessDenied">No permission to access this resource</string>
+
+    <string name="error">Error</string>
+    <string name="button_exit">Exit</string>
+
+    <string name="noDoNotAsk">No, Don\'t ask me</string>
+    <string name="airplane_warning">You switched on the antenna, it can unmask you. Turn it off if you do not need it.\n(Press \"Yes\" -> select checkbox \"Airplane mode\")</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="not_show_mor">Do not show again</string>
+    <string name="btnCancel">Cancel</string>
+
+    <!--
+        This is the name that users will see when interacting with this channel.
+        It should describe the category of notifications that will be sent through this channel
+     -->
+    <!-- [START fcm_default_icon_string] -->
+    <string name="default_notification_channel_name" translatable="true">Weather</string>
+    <!-- [END fcm_default_icon_string] -->
+    <string name="msg_subscribe_failed">Failed to subscribe to weather topic</string>
+    <string name="fcm_message">FCM Message</string>
+    <!-- Preference Titles -->
+    <string name="common_header">Common</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails</string>
+    <string name="attachment_summary_off">Automatically don\'t download attachments for incoming emails</string>
+
+    <!--night day-->
+    <string name="mode_night_no">Day</string>
+    <string name="mode_night_yes">Night</string>
+    <string name="mode_night_follow_system">System</string>
+    <string name="mode_night_auto_battery">Battery</string>
+    <string name="cancel">Cancel</string>
+    <string name="color_theme">Color theme</string>
+
+    <string name="logout">Logout</string>
+
+
+    <!--button selector color-->
+    <color name="btn_back_separator_light">#909E9E9E</color>
+    <color name="btn_back_separator_focused_light">#c8038cbc</color>
+    <color name="btn_back_separator_disabled_light">#7090A4AE</color>
+
+    <color name="btn_back_normal_transparent1_light">#20888888</color>
+    <color name="btn_back_normal_transparent2_light">#00FFFFFF</color>
+
+    <color name="btn_back_normal_light">#90BDBDBD</color>
+    <color name="btn_back_normal_dark">#90455A64</color>
+
+    <color name="btn_back_disabled_light">#70F5F5F5</color>
+    <color name="btn_back_disabled_dark">#70455A64</color>
+
+    <color name="btn_back_disabled_focused_light">#70F5F5F5</color>
+    <color name="btn_back_disabled_focused_dark">#70455A64</color>
+
+    <color name="btn_back_normal_focused_light">#BA038CBC</color>
+    <color name="btn_back_normal_focused_dark">#BA038CBC</color>
+
+    <color name="btn_back_pressed_light">#FA038CBC</color>
+    <color name="btn_back_pressed_dark">#FA038CBC</color>
+
+
 </resources>
