@@ -21,6 +21,7 @@ MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\shis
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\shish\.gradle\caches\transforms-2\files-2.1\ae0d43a8cd9e2d0dca0ee7612d373384\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.jakewharton:butterknife:10.1.0] C:\Users\shish\.gradle\caches\transforms-2\files-2.1\62aceede23b4578baed63ab088177c39\jetified-butterknife-10.1.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\shish\.gradle\caches\transforms-2\files-2.1\fb56b4e2d0f980397f8d84b45b7f704a\jetified-glide-4.10.0\AndroidManifest.xml:2:1-12:12
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] C:\Users\shish\.gradle\caches\transforms-2\files-2.1\a8812d66db62e9b26d6c1f501a43308f\jetified-rxandroid-2.1.1\AndroidManifest.xml:15:1-20:12
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\shish\.gradle\caches\transforms-2\files-2.1\b5466dcfe12488b715be006750d7ab23\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\shish\.gradle\caches\transforms-2\files-2.1\2a612bd4c425dcfbfc1a3a304e287881\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.2.0] C:\Users\shish\.gradle\caches\transforms-2\files-2.1\2c69121978482ab3b49af0c68d46e0b8\fragment-1.2.0\AndroidManifest.xml:17:1-24:12
@@ -162,6 +163,8 @@ MERGED from [com.jakewharton:butterknife:10.1.0] C:\Users\shish\.gradle\caches\t
 MERGED from [com.jakewharton:butterknife:10.1.0] C:\Users\shish\.gradle\caches\transforms-2\files-2.1\62aceede23b4578baed63ab088177c39\jetified-butterknife-10.1.0\AndroidManifest.xml:5:5-44
 MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\shish\.gradle\caches\transforms-2\files-2.1\fb56b4e2d0f980397f8d84b45b7f704a\jetified-glide-4.10.0\AndroidManifest.xml:6:5-8:41
 MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\shish\.gradle\caches\transforms-2\files-2.1\fb56b4e2d0f980397f8d84b45b7f704a\jetified-glide-4.10.0\AndroidManifest.xml:6:5-8:41
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] C:\Users\shish\.gradle\caches\transforms-2\files-2.1\a8812d66db62e9b26d6c1f501a43308f\jetified-rxandroid-2.1.1\AndroidManifest.xml:18:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] C:\Users\shish\.gradle\caches\transforms-2\files-2.1\a8812d66db62e9b26d6c1f501a43308f\jetified-rxandroid-2.1.1\AndroidManifest.xml:18:5-43
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\shish\.gradle\caches\transforms-2\files-2.1\b5466dcfe12488b715be006750d7ab23\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\shish\.gradle\caches\transforms-2\files-2.1\b5466dcfe12488b715be006750d7ab23\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\shish\.gradle\caches\transforms-2\files-2.1\2a612bd4c425dcfbfc1a3a304e287881\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
